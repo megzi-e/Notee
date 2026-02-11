@@ -9,8 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@central-icons-react/square-filled-radius-0-stroke-2": "^1.1.123",
-    "@central-icons-react/square-outlined-radius-0-stroke-2": "^1.1.123",
     "@tiptap/core": "^3.19.0",
     "@tiptap/extension-bold": "^3.19.0",
     "@tiptap/extension-bullet-list": "^3.19.0",

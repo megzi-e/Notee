@@ -10,7 +10,7 @@ import {
   IconListBullets,
   IconNumberedList,
   IconPlanning,
-} from '@central-icons-react/square-outlined-radius-0-stroke-2'
+} from '@/components/icons'
 import styles from './RichTextToolbar.module.css'
 
 // ---------------------------------------------------------------------------
