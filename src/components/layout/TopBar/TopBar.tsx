@@ -1,4 +1,4 @@
-import { IconBarsTwo } from '@/components/icons'
+import { IconBarsTwo2 } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconBarsTwo2'
 import { NewNoteButton } from '@/components/layout/NewNoteButton'
 import styles from './TopBar.module.css'
 
@@ -17,7 +17,7 @@ export function TopBar({ onToggleSidebar, onNewNote }: TopBarProps) {
         onClick={onToggleSidebar}
         aria-label="Toggle sidebar"
       >
-        <IconBarsTwo size={24} />
+        <IconBarsTwo2 size={24} />
       </button>
       <NewNoteButton className={styles.newNote} onClick={onNewNote} />
     </header>

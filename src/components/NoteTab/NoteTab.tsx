@@ -1,5 +1,5 @@
 import { type MouseEvent } from 'react'
-import { IconTrashCan } from '@/components/icons'
+import { IconTrashCan } from '@central-icons-react/square-filled-radius-0-stroke-2/IconTrashCan'
 import styles from './NoteTab.module.css'
 
 export interface NoteTabProps {

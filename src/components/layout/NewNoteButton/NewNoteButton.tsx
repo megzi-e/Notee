@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes, forwardRef } from 'react'
-import { IconPlusSmall } from '@/components/icons'
+import { IconPlusSmall } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconPlusSmall'
 import styles from './NewNoteButton.module.css'
 
 export interface NewNoteButtonProps

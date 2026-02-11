@@ -19,7 +19,7 @@
 
 import { NodeViewWrapper, NodeViewContent } from '@tiptap/react'
 import type { NodeViewProps } from '@tiptap/react'
-import { IconCheckmarkSmall } from '@/components/icons'
+import { IconCheckmark1Small } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconCheckmark1Small'
 
 export function TaskItemView({
   node,
@@ -47,7 +47,7 @@ export function TaskItemView({
       >
         {checked && (
           <span className="task-checkbox__icon">
-            <IconCheckmarkSmall size={14} />
+            <IconCheckmark1Small size={14} />
           </span>
         )}
       </button>
