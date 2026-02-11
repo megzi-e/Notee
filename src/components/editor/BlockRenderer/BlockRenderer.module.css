@@ -1,0 +1,143 @@
+/* BlockRenderer — styled block output using design tokens */
+
+.block {
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+}
+
+/* ── Shared editable input reset ── */
+
+.editableInput {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  resize: none;                          /* disable manual resize on textareas */
+  overflow: hidden;                      /* hide scrollbar; auto-resize handles height */
+  padding: 0;
+  margin: 0;
+}
+
+.editableInput::placeholder {
+  color: var(--color-text-secondary);
+}
+
+/* ── Paragraph ── */
+
+.paragraph {
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-height);
+  font-weight: 400;
+  letter-spacing: 0;
+  min-height: var(--font-body-height);    /* empty paragraphs keep their line */
+}
+
+/* ── Headings ── */
+
+.heading1 {
+  font-size: var(--font-heading1-size);
+  line-height: var(--font-heading1-height);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.heading2 {
+  font-size: var(--font-heading2-size);
+  line-height: var(--font-heading2-height);
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.heading3 {
+  font-size: var(--font-heading3-size);
+  line-height: var(--font-heading3-height);
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+/* ── Lists (shared) ── */
+
+.list {
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-height);
+  font-weight: 400;
+  padding-left: var(--spacing-x-big);     /* 24px indent */
+}
+
+.list li {
+  padding: var(--spacing-xx-sm) 0;        /* 4px vertical per item */
+}
+
+.list .editableInput {
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-height);
+}
+
+/* ── Checklist ── */
+
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.checklistItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-x-sm);              /* 8px between checkbox and text */
+  padding: var(--spacing-xx-sm) 0;       /* 4px vertical */
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-height);
+}
+
+.checklistItem .editableInput {
+  flex: 1;
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-height);
+}
+
+/* ── Custom checkbox (circle style per design system) ── */
+
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border: 2px solid var(--color-neutral-black);
+  border-radius: 50%;                    /* circle */
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.checkbox:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.checkboxChecked {
+  background-color: var(--color-neutral-black);
+  border-color: var(--color-neutral-black);
+}
+
+.checkIcon {
+  color: var(--color-neutral-white);
+  display: none;
+}
+
+.checkboxChecked .checkIcon {
+  display: block;
+}
+
+/* ── Checked text: strikethrough ── */
+
+.checklistTextChecked {
+  text-decoration: line-through;
+  color: var(--color-text-secondary);
+}

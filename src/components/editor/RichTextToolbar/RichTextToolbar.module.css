@@ -1,0 +1,96 @@
+/* RichTextToolbar — formatting bar using design tokens */
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xx-sm);              /* 4px between buttons — matches Figma */
+  border-top: 1px solid var(--color-bg-outline);
+  padding: var(--toolbar-padding-y) 0 0;  /* 12px top, no horizontal, 0 bottom */
+  flex-shrink: 0;
+}
+
+/* ── Format toggle button ── */
+
+.formatBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xx-sm);          /* 4px → 32px total with 24px icon */
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--color-neutral-black);
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.formatBtn:hover:not(.formatBtnActive) {
+  background-color: var(--color-interface-overlay-2);
+}
+
+.formatBtn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.formatBtnActive {
+  background-color: var(--color-accent);  /* #000 */
+  color: var(--color-neutral-white);
+}
+
+/* ── Heading picker wrapper ── */
+
+.headingPicker {
+  position: relative;
+}
+
+/* ── Heading dropdown (opens upward from toolbar) ── */
+
+.headingDropdown {
+  position: absolute;
+  bottom: calc(100% + var(--spacing-xx-sm));  /* 4px gap above button */
+  left: 0;
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xx-sm);              /* 4px between items */
+  padding: var(--spacing-xx-sm);          /* 4px */
+  background-color: var(--color-neutral-white);
+  border: 1px solid var(--color-interface-overlay-2);
+  border-radius: 0;
+  box-shadow: var(--shadow-md);
+  z-index: 50;
+  overflow: hidden;
+}
+
+/* ── Heading dropdown item ── */
+
+.headingItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);                 /* 16px between icon and label */
+  width: 100%;
+  padding: var(--spacing-x-sm);           /* 8px */
+  border: none;
+  border-radius: 0;
+  background-color: var(--color-neutral-white);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  font-size: var(--font-label-large-size);
+  line-height: var(--font-label-large-height);
+  font-weight: 500;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: background-color 0.1s ease;
+}
+
+.headingItem:hover {
+  background-color: var(--color-interface-overlay-2);
+}
+
+.headingItemActive {
+  background-color: var(--color-interface-overlay-1);
+  color: var(--color-accent-primary);
+}

@@ -1,0 +1,65 @@
+/* Input — form input primitive using design tokens */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xx-sm);
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-family);
+  font-size: var(--font-label-large-size);
+  line-height: var(--font-label-large-height);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-bg-outline);
+  border-radius: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-height);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-default);
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: var(--color-interface-overlay-1);
+}
+
+/* ── Error state ── */
+.inputError {
+  border-color: var(--color-state-destructive);
+}
+
+.inputError:focus {
+  border-color: var(--color-state-destructive);
+  box-shadow: 0 0 0 1px var(--color-state-destructive);
+}
+
+.errorText {
+  font-family: var(--font-family);
+  font-size: var(--font-label-small-size);
+  line-height: var(--font-label-small-height);
+  font-weight: 500;
+  color: var(--color-state-destructive);
+}

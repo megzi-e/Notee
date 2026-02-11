@@ -1,0 +1,41 @@
+{
+  "name": "note-app",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@central-icons-react/square-filled-radius-0-stroke-2": "^1.1.123",
+    "@central-icons-react/square-outlined-radius-0-stroke-2": "^1.1.123",
+    "@tiptap/core": "^3.19.0",
+    "@tiptap/extension-bold": "^3.19.0",
+    "@tiptap/extension-bullet-list": "^3.19.0",
+    "@tiptap/extension-document": "^3.19.0",
+    "@tiptap/extension-hard-break": "^3.19.0",
+    "@tiptap/extension-heading": "^3.19.0",
+    "@tiptap/extension-history": "^3.19.0",
+    "@tiptap/extension-italic": "^3.19.0",
+    "@tiptap/extension-list-item": "^3.19.0",
+    "@tiptap/extension-ordered-list": "^3.19.0",
+    "@tiptap/extension-paragraph": "^3.19.0",
+    "@tiptap/extension-task-item": "^3.19.0",
+    "@tiptap/extension-task-list": "^3.19.0",
+    "@tiptap/extension-text": "^3.19.0",
+    "@tiptap/extension-underline": "^3.19.0",
+    "@tiptap/pm": "^3.19.0",
+    "@tiptap/react": "^3.19.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "typescript": "~5.7.0",
+    "vite": "^6.0.0"
+  }
+}

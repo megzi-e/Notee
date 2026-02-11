@@ -1,0 +1,190 @@
+/*
+ * TipTap editor styles — maps TipTap's generated HTML to the
+ * design-system typography tokens.
+ *
+ * TipTap renders into a <div class="tiptap"> inside <EditorContent>.
+ * All selectors are scoped under .tiptap-editor (set via editorProps).
+ */
+
+/* ── Editor root ── */
+
+.tiptap-editor {
+  outline: none;
+  font-family: var(--font-family);
+  font-size: var(--font-body-size);       /* 16px */
+  line-height: var(--font-body-height);   /* 24px */
+  color: var(--color-text-primary);
+  min-height: 100px;
+  cursor: text;
+}
+
+/* Placeholder for completely empty editor */
+.tiptap-editor p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+/* ── Paragraphs ── */
+
+.tiptap-editor p {
+  margin: 0;
+  padding: 0;
+  min-height: var(--font-body-height);
+}
+
+/* ── Headings ── */
+
+.tiptap-editor h1 {
+  font-size: var(--font-heading1-size);     /* 24px */
+  line-height: var(--font-heading1-height); /* 32px */
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.tiptap-editor h2 {
+  font-size: var(--font-heading2-size);     /* 20px */
+  line-height: var(--font-heading2-height); /* 28px */
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+.tiptap-editor h3 {
+  font-size: var(--font-heading3-size);     /* 18px */
+  line-height: var(--font-heading3-height); /* 24px */
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+/* ── Inline marks ── */
+
+.tiptap-editor strong {
+  font-weight: var(--format-bold-weight);   /* 700 */
+}
+
+.tiptap-editor em {
+  font-style: var(--format-italic-style);   /* italic */
+}
+
+.tiptap-editor u {
+  text-decoration: var(--format-underline-decoration); /* underline */
+}
+
+/* ── Bullet & Ordered lists ── */
+
+.tiptap-editor ul,
+.tiptap-editor ol {
+  padding-left: var(--spacing-x-big);       /* 24px indent */
+  margin: 0;
+}
+
+.tiptap-editor li {
+  padding: var(--spacing-xx-sm) 0;          /* 4px vertical */
+}
+
+.tiptap-editor li p {
+  margin: 0;
+}
+
+/* ── Nested lists — tighter padding ── */
+
+.tiptap-editor li ul,
+.tiptap-editor li ol {
+  margin-top: var(--spacing-xx-sm);         /* 4px */
+}
+
+/* ── Task list (custom NodeView — matches Figma node 905:2264) ── */
+
+.tiptap-editor ul[data-type="taskList"] {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-x-sm);                  /* 8px between each task item */
+}
+
+/* Task item row — flex layout, 16px gap per Figma */
+.tiptap-editor .task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);                    /* 16px — Figma: spacing-md */
+  padding: var(--spacing-xx-sm) var(--spacing-sm); /* 4px vertical, 12px horizontal */
+  background-color: var(--color-interface-overlay-2); /* #f5f5f5 */
+  width: fit-content;
+  border: none;
+}
+
+/* ── Circular checkbox (20x20) ── */
+
+.tiptap-editor .task-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;                           /* align with first line of text */
+  padding: 0;
+  border: 2px solid var(--color-interface-overlay-2);  /* #f5f5f5 */
+  border-radius: 50%;                        /* circle */
+  background-color: var(--color-neutral-white);
+  cursor: pointer;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.tiptap-editor .task-checkbox:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Checked state — black fill, white icon */
+.tiptap-editor .task-checkbox--checked {
+  background-color: var(--color-neutral-black);
+  border-color: var(--color-neutral-black);
+}
+
+/* Checkmark icon container */
+.tiptap-editor .task-checkbox__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-white);
+  line-height: 0;
+}
+
+/* ── Task content area ── */
+
+.tiptap-editor .task-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.tiptap-editor .task-content p {
+  margin: 0;
+}
+
+/* Checked text — strikethrough + secondary color */
+.tiptap-editor .task-content--checked p {
+  text-decoration: line-through;
+  text-decoration-skip-ink: none;
+  color: var(--color-text-secondary);        /* #767676 */
+}
+
+/* ── Nested task lists ── */
+
+.tiptap-editor ul[data-type="taskList"] ul[data-type="taskList"] {
+  margin-top: var(--spacing-xx-sm);          /* 4px */
+  padding-left: var(--spacing-x-big);        /* 24px */
+}
+
+/* ── Hard break ── */
+
+.tiptap-editor br.ProseMirror-trailingBreak {
+  display: block;
+}

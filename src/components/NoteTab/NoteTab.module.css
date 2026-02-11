@@ -1,0 +1,102 @@
+/* NoteTab — sidebar list item with 4-state variant matrix using design tokens */
+/*
+ * Variant matrix (CSS-only, no JS state for hover):
+ *
+ *              │ Default (no hover)             │ Hover
+ *  ────────────┼────────────────────────────────┼──────────────────────────────
+ *  Inactive    │ transparent BG, black text     │ overlay3 BG, delete visible
+ *  Active      │ accent BG, white text          │ accent.primary BG, delete visible
+ */
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xx-sm);                /* 4px between title and delete */
+  width: 100%;
+  height: var(--spacing-xxxx-big);          /* 36px */
+  padding: 0 var(--spacing-sm);            /* 0 12px */
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: var(--font-label-large-size);  /* 14px */
+  line-height: var(--font-label-large-height); /* 16px */
+  font-weight: 500;
+  text-align: left;
+  transition: background-color 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+/* ── Title text (truncation) ── */
+
+.title {
+  flex: 1 1 0;
+  min-width: 1px;                          /* prevents flex overflow */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Delete button (hover-only) ── */
+
+.deleteBtn {
+  display: none;                           /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: var(--spacing-xx-sm);           /* 4px → 32px hit area with 24px icon */
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--color-state-destructive);
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+}
+
+.deleteBtn:hover {
+  background-color: var(--color-state-destructive-transparent);
+}
+
+.deleteBtn:focus-visible {
+  outline: 2px solid var(--color-state-destructive);
+  outline-offset: -2px;
+}
+
+/* ── Inactive default ── */
+
+.inactive {
+  color: var(--color-neutral-black);
+  background-color: transparent;
+}
+
+.inactive:hover {
+  background-color: var(--color-interface-overlay-3);  /* #e8e8e8 */
+}
+
+/* ── Active default ── */
+
+.active {
+  color: var(--color-neutral-white);
+  background-color: var(--color-accent);               /* #000000 */
+}
+
+.active:hover {
+  background-color: var(--color-accent-primary);       /* #1a1a1a */
+}
+
+/* Active tab: delete icon should be white-ish or remain red — design says red */
+.active .deleteBtn {
+  color: var(--color-state-destructive);
+}
+
+/* ── Show delete button on tab hover ── */
+
+.tab:hover .deleteBtn {
+  display: inline-flex;
+}

@@ -1,0 +1,102 @@
+/**
+ * Design tokens as CSS custom properties.
+ * Import in root (e.g. index.css or App.tsx) and use var(--token-name).
+ */
+
+:root {
+  /* Colors */
+  --color-neutral-white: #ffffff;
+  --color-neutral-black: #000000;
+  --color-text-primary: #171717;
+  --color-text-secondary: #767676;
+  --color-text-pry: #000000;
+  --color-bg-default: #ffffff;
+  --color-bg-overlay: #f7f7f7;
+  --color-bg-outline: #e8e8e8;
+  --color-interface-overlay-1: #f7f7f7;
+  --color-interface-overlay-2: #f5f5f5;
+  --color-interface-overlay-3: #e8e8e8;
+  --color-accent: #000000;
+  --color-accent-primary: #1a1a1a;
+  --color-state-destructive: #ff3b30;
+  --color-state-destructive-transparent: #ff3b301a;
+
+  /* Buttons */
+  --color-btn-primary: #000000;
+  --color-btn-primary-hover: #262626;
+  --color-btn-secondary: #f7f7f7;
+  --color-btn-secondary-hover: #e8e8e8;
+  --color-btn-destructive: #ff3b30;
+  --color-btn-destructive-hover: #cd2f26;
+
+  /* Spacing (px) */
+  --spacing-xx-sm: 4px;
+  --spacing-x-sm: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-big: 20px;
+  --spacing-x-big: 24px;
+  --spacing-xx-big: 28px;
+  --spacing-xxx-big: 32px;
+  --spacing-xxxx-big: 36px;
+
+  /* Radius */
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+
+  /* Shadow */
+  --shadow-md: 0 2px 4px -2px rgba(16, 24, 40, 0.06), 0 4px 8px -2px rgba(16, 24, 40, 0.1);
+
+  /* Typography */
+  --font-family: "JetBrains Mono", ui-monospace, monospace;
+  --font-title-size: 28px;
+  --font-title-height: 36px;
+  --font-title-weight: 700;
+  --font-heading1-size: 24px;
+  --font-heading1-height: 32px;
+  --font-heading2-size: 20px;
+  --font-heading2-height: 28px;
+  --font-heading3-size: 18px;
+  --font-heading3-height: 24px;
+  --font-body-size: 16px;
+  --font-body-height: 24px;
+  --font-label-large-size: 14px;
+  --font-label-large-height: 16px;
+  --font-label-small-size: 12px;
+  --font-label-small-height: 14px;
+
+  /* Inline format styles (rich text editor) */
+  --format-bold-weight: 700;
+  --format-italic-style: italic;
+  --format-underline-decoration: underline;
+
+  /* Layout */
+  --sidebar-width: 233px;
+  --sidebar-min-width: 240px;
+  --editor-content-padding: 32px;
+  --toolbar-padding-y: 12px;
+  --toolbar-padding-x: 32px;
+  --toolbar-gap: 16px;
+}
+
+/* ── Global base resets ── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-default);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

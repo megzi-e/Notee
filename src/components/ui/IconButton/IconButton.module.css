@@ -1,0 +1,72 @@
+/* IconButton — square icon-only button using design tokens */
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-x-sm);
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--color-text-pry);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.iconButton:hover:not(:disabled) {
+  background-color: var(--color-interface-overlay-2);
+}
+
+.iconButton:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.iconButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Variant: default (ghost) ── */
+.default {
+  background-color: transparent;
+  color: var(--color-text-pry);
+}
+
+.default:hover:not(:disabled) {
+  background-color: var(--color-interface-overlay-2);
+}
+
+/* ── Variant: filled ── */
+.filled {
+  background-color: var(--color-btn-secondary);
+  color: var(--color-text-pry);
+}
+
+.filled:hover:not(:disabled) {
+  background-color: var(--color-btn-secondary-hover);
+}
+
+/* ── Variant: destructive ── */
+.destructive {
+  background-color: transparent;
+  color: var(--color-state-destructive);
+}
+
+.destructive:hover:not(:disabled) {
+  background-color: var(--color-state-destructive-transparent);
+}
+
+/* ── Sizes ── */
+.sm {
+  padding: var(--spacing-xx-sm);
+}
+
+.md {
+  padding: var(--spacing-x-sm);
+}
+
+.lg {
+  padding: var(--spacing-sm);
+}

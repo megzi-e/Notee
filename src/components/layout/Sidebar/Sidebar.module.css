@@ -1,0 +1,75 @@
+/* Sidebar — left panel using design tokens */
+/* Desktop: inline flex item.  Tablet/mobile: fixed overlay drawer. */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: var(--sidebar-width);            /* 233px — Figma frame */
+  flex-shrink: 0;
+  height: 100%;
+  background-color: var(--color-bg-overlay);
+  padding: var(--spacing-x-sm);           /* 8px all around */
+  border-right: 1px solid var(--color-bg-outline);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);                /* 16px between children */
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+/* ── Tablet / Mobile: overlay drawer ── */
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none;
+    border-top-right-radius: var(--radius-sm, 8px);
+    border-bottom-right-radius: var(--radius-sm, 8px);
+  }
+
+  .open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* ── Backdrop (tablet / mobile only) ── */
+
+.backdrop {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .backdrop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    inset: 0;
+    z-index: 199;
+    padding: 24px;
+    background-color: rgba(184, 183, 183, 0.1);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .backdropVisible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

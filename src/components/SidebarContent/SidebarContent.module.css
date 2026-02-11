@@ -1,0 +1,48 @@
+/* SidebarContent — date-grouped note list */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-x-sm);              /* 8px between groups */
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionLabel {
+  font-family: var(--font-family);
+  font-size: var(--font-label-small-size);   /* 12px */
+  line-height: var(--font-label-small-height); /* 14px */
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xx-sm) var(--spacing-sm); /* 4px 12px */
+  user-select: none;
+}
+
+.noteList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ── Empty state ── */
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-x-big) var(--spacing-sm); /* 24px 12px */
+  text-align: center;
+}
+
+.emptyText {
+  font-family: var(--font-family);
+  font-size: var(--font-label-large-size);
+  line-height: var(--font-label-large-height);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}

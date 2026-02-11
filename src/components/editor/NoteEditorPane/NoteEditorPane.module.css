@@ -1,0 +1,96 @@
+/* NoteEditorPane — the editor surface using design tokens */
+/* Layout matches Figma: header → body → toolbar (flex column) */
+
+.pane {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-height: 0;
+  padding: var(--spacing-big);           /* 20px — matches Figma content container */
+  gap: var(--spacing-sm);               /* 12px between header / body / toolbar */
+  background-color: var(--color-bg-default);
+  border: 2px solid var(--color-accent);
+  overflow: hidden;
+}
+
+/* ── Header (title input) ── */
+
+.header {
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--color-bg-outline);
+  padding-bottom: var(--spacing-sm);    /* 12px */
+}
+
+.titleInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family);
+  font-size: var(--font-title-size);    /* 28px */
+  line-height: var(--font-title-height); /* 36px */
+  font-weight: var(--font-title-weight); /* 700 */
+  color: var(--color-text-primary);
+  letter-spacing: 0;
+}
+
+.titleInput::placeholder {
+  color: var(--color-text-secondary);
+}
+
+/* ── Body (block list, scrollable) ── */
+
+.body {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.blocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xx-sm);            /* 4px between blocks */
+}
+
+.blockWrapper {
+  border-radius: 0;
+  padding: var(--spacing-xx-sm);        /* 4px */
+  cursor: text;
+  transition: background-color 0.1s ease;
+}
+
+.blockWrapper:hover {
+  background-color: var(--color-interface-overlay-2);
+}
+
+.blockWrapperFocused {
+  background-color: var(--color-interface-overlay-1);
+}
+
+/* ── Empty state ── */
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: var(--spacing-md);
+  text-align: center;
+}
+
+.emptyTitle {
+  font-family: var(--font-family);
+  font-size: var(--font-heading2-size);
+  line-height: var(--font-heading2-height);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.emptyHint {
+  font-family: var(--font-family);
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-height);
+  color: var(--color-text-secondary);
+}

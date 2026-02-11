@@ -1,0 +1,77 @@
+/* Text — typographic primitive mapped to design system tokens */
+
+.text {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-primary);
+}
+
+/* ── Variants ── */
+
+.title {
+  font-size: var(--font-title-size);
+  line-height: var(--font-title-height);
+  font-weight: var(--font-title-weight);
+  letter-spacing: 0;
+}
+
+.h1 {
+  font-size: var(--font-heading1-size);
+  line-height: var(--font-heading1-height);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.h2 {
+  font-size: var(--font-heading2-size);
+  line-height: var(--font-heading2-height);
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.h3 {
+  font-size: var(--font-heading3-size);
+  line-height: var(--font-heading3-height);
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.body {
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-height);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.labelLg {
+  font-size: var(--font-label-large-size);
+  line-height: var(--font-label-large-height);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.labelSm {
+  font-size: var(--font-label-small-size);
+  line-height: var(--font-label-small-height);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* ── Color modifiers ── */
+
+.colorPrimary {
+  color: var(--color-text-primary);
+}
+
+.colorSecondary {
+  color: var(--color-text-secondary);
+}
+
+.colorInverse {
+  color: var(--color-neutral-white);
+}
+
+.colorDestructive {
+  color: var(--color-state-destructive);
+}

@@ -1,0 +1,22 @@
+/* DeleteModal — composed from Modal primitive, using design tokens */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);                /* 16px between caption and actions */
+}
+
+.caption {
+  font-family: var(--font-family);
+  font-size: var(--font-label-large-size);
+  line-height: var(--font-label-large-height);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-x-sm);             /* 8px between buttons */
+}
