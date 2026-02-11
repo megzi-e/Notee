@@ -25,7 +25,7 @@ import type {
   ChecklistBlock,
   ChecklistItem,
 } from '@/types/note'
-import { IconCheckmarkSmall } from '@/components/icons'
+import { IconCheckmark1Small } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconCheckmark1Small'
 import { assertNever } from '@/utils/assert-never'
 import { spansToText, textToSpans } from '@/utils/span-text'
 import styles from './BlockRenderer.module.css'
@@ -319,7 +319,7 @@ function ChecklistItemInput({
         role="checkbox"
       >
         <span className={styles.checkIcon}>
-          <IconCheckmarkSmall size={14} />
+          <IconCheckmark1Small size={14} />
         </span>
       </button>
       <textarea

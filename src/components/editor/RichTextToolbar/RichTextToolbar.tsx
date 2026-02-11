@@ -1,16 +1,14 @@
 import { useState, useRef, useEffect, useCallback, type ReactNode } from 'react'
-import {
-  IconTitleCase,
-  IconH1,
-  IconH2,
-  IconH3,
-  IconBold,
-  IconItalic,
-  IconUnderline,
-  IconListBullets,
-  IconNumberedList,
-  IconPlanning,
-} from '@/components/icons'
+import { IconTitleCase } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconTitleCase'
+import { IconH1 } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconH1'
+import { IconH2 } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconH2'
+import { IconH3 } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconH3'
+import { IconBold } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconBold'
+import { IconItalic } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconItalic'
+import { IconUnderline } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconUnderline'
+import { IconBulletList } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconBulletList'
+import { IconNumberedList } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconNumberedList'
+import { IconPlanning } from '@central-icons-react/square-outlined-radius-0-stroke-2/IconPlanning'
 import styles from './RichTextToolbar.module.css'
 
 // ---------------------------------------------------------------------------
@@ -193,7 +191,7 @@ export function RichTextToolbar({
         aria-label="Bullet list"
         aria-pressed={activeBlockType === 'bulletList'}
       >
-        <IconListBullets size={24} />
+        <IconBulletList size={24} />
       </button>
 
       {/* ── Numbered list ── */}
