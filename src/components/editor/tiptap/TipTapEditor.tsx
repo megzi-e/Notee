@@ -52,7 +52,6 @@ export function TipTapEditor({
     editorProps: {
       attributes: {
         class: 'tiptap-editor',
-        'data-placeholder': 'Start writing…',
       },
     },
     onUpdate: ({ editor: ed }) => {

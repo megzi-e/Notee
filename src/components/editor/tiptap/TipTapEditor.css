@@ -19,12 +19,13 @@
 }
 
 /* Placeholder for completely empty editor */
-.tiptap-editor p.is-editor-empty:first-child::before {
+.tiptap-editor .is-editor-empty:first-child::before {
   content: attr(data-placeholder);
   float: left;
   height: 0;
   color: var(--color-text-secondary);
   pointer-events: none;
+  font-style: normal;
 }
 
 /* ── Paragraphs ── */

@@ -55,6 +55,7 @@ import Underline from '@tiptap/extension-underline'
 
 // ── Plugins ─────────────────────────────────────────────────────────────
 import History from '@tiptap/extension-history'
+import Placeholder from '@tiptap/extension-placeholder'
 
 // ────────────────────────────────────────────────────────────────────────
 // Extension array — the single source of truth for the editor schema.
@@ -282,5 +283,16 @@ export const extensions: Extensions = [
   History.configure({
     depth: 100,
     newGroupDelay: 500,
+  }),
+
+  /**
+   * Placeholder — shows hint text when the editor is empty.
+   *
+   * The extension adds `is-empty` / `is-editor-empty` classes and a
+   * `data-placeholder` attribute directly on the empty node, which the
+   * CSS `::before` pseudo-element reads via `attr(data-placeholder)`.
+   */
+  Placeholder.configure({
+    placeholder: 'Start writing here...',
   }),
 ]
