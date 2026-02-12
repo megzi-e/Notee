@@ -3,7 +3,6 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);                /* 16px between caption and actions */
 }
 
 .caption {
@@ -12,6 +11,7 @@
   line-height: var(--font-label-large-height);
   font-weight: 500;
   color: var(--color-text-secondary);
+  margin: 0;
 }
 
 .actions {
@@ -19,4 +19,5 @@
   align-items: center;
   justify-content: flex-end;
   gap: var(--spacing-x-sm);             /* 8px between buttons */
+  margin-top: var(--spacing-x-big);     /* 24px — separates CTAs from header group */
 }
