@@ -11,6 +11,12 @@
 
 /* ── Format toggle button ── */
 
+@keyframes toolbarIconPop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+
 .formatBtn {
   display: inline-flex;
   align-items: center;
@@ -21,11 +27,25 @@
   background-color: transparent;
   color: var(--color-neutral-black);
   cursor: pointer;
-  transition: background-color 0.12s ease, color 0.12s ease;
+  transition: background-color 0.12s ease, color 0.12s ease, transform 0.15s ease;
 }
 
 .formatBtn:hover:not(.formatBtnActive) {
   background-color: var(--color-interface-overlay-2);
+}
+
+/* Slight icon lift on hover */
+.formatBtn:hover svg {
+  transform: scale(1.08);
+  transition: transform 0.15s ease;
+}
+
+.formatBtn svg {
+  transition: transform 0.15s ease;
+}
+
+.formatBtn:active svg {
+  animation: toolbarIconPop 0.2s ease;
 }
 
 .formatBtn:focus-visible {
